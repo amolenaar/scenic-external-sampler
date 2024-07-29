@@ -22,4 +22,4 @@ poetry install
 poetry run pytest
 ```
 
-All tests succeed, except for one `xfail`.
+All tests succeed, except for one.

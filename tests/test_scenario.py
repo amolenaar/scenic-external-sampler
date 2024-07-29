@@ -60,9 +60,9 @@ def test_regions_in_uniform_distribution():
     assert NorthEast.containsPoint(scene.egoObject.position) or SouthWest.containsPoint(scene.egoObject.position)
 
 
-@pytest.mark.xfail(
-    reason="This scenario works with internal distributions, but fails as soon as we depend on an external sampler"
-)
+# @pytest.mark.xfail(
+#     reason="This scenario works with internal distributions, but fails as soon as we depend on an external sampler"
+# )
 def test_regions_with_externally_sampled_distribution():
     scenario = scenarioFromString(
         dedent(
