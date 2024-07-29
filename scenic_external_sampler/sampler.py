@@ -9,10 +9,8 @@ from typing import Any
 from scenic.core.external_params import ExternalParameter, ExternalSampler
 
 
-class DoubleSampler(ExternalSampler):
+class SimpleSampler(ExternalSampler):
     """A simple example sampler.
-    
-    Multiply the values given.
     """
 
     def __init__(self, params, globalParams: dict):
@@ -21,13 +19,12 @@ class DoubleSampler(ExternalSampler):
             p.sampler = self
         self.all_values = {p.name: p.values for p in params}
         self.current_index = -1
-        self.factor = 2
         self.cachedSample = None  # see superclass code
         self.rejectionFeedback = "rejected"
 
     def nextSample(self, feedback):
         self.current_index += 1
-        return {name: (values[self.current_index] * self.factor) for name, values in self.all_values.items()}
+        return {name: (values[self.current_index]) for name, values in self.all_values.items()}
 
     def valueFor(self, param):
         """Return the value for a specific parameter."""
