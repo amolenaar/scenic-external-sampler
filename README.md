@@ -20,6 +20,7 @@ Check out this repository and run:
 ```
 poetry install
 poetry run pytest
+poetry run scenic -b test.scenic
 ```
 
 All tests succeed, except for one.
