@@ -71,7 +71,7 @@ def test_regions_with_externally_sampled_distribution():
             from scenic_external_sampler.sampler import SimpleSampler, Values
             param externalSampler = SimpleSampler
 
-            ego = new Object in Values(NorthEast, SouthWest)
+            ego = new Object in Values([NorthEast, SouthWest])
             """
         )
     )
